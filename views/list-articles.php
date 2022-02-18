@@ -13,7 +13,7 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><?= $article->titre ?></h5>
-                        <p class="card-text"><?= resume($article) ?></p>
+                        <p class="card-text"><?= resume($article, 150) ?></p>
                         <a class="text-align-right" href="index.php?route=details-article&id=<?= $article->id ?>">Voir plus ...</a>
                         <p class="card-text"><small class="text-muted"><?= $article->date_de_publication ?></small></p>
 
