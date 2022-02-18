@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/partie/header.php'; ?>
+<?php include __DIR__ . './parties/header.php' ?>
 
 
 <h1>List des articles</h1>
