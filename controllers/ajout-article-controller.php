@@ -24,7 +24,7 @@ if (!empty($_POST)) {
         $article->image = $_POST['image'];
         $article->contenu = $_POST['contenu'];
         $article->auteur = $_POST['auteur'];
-        // $article->date_de_publication = $_POST['date'];
+        $article->date_de_publication = $_POST['date'];
 
         $article->save(); // Je sauvegarde (ça envoie à la BDD)
 

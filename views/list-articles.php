@@ -19,6 +19,7 @@
 
                         <p class="card-text"><a href=""></a><small class="text-muted"><?= $article->auteur ?></small></p>
                         <a class="text-align-right text-warning" href="index.php?route=modif-article&id=<?= $article->id ?>">Modifier l'article</a>
+                        <a class="text-align-right text-danger" href="index.php?route=supp-article&id=<?= $article->id ?>">Supprimer l'article</a>
 
                     </div>
                 </div>
