@@ -1,4 +1,12 @@
 <?php
+require_once __DIR__ . '/../models/Article.php';
+if (!empty($_GET['id']))
+    $article = Article::retrieveByPK($_GET['id']); // Retrieve by ID (retrieve one)
+
+
+if (empty($article)) // Le contact est vide si : 1/ il a pas été trouvé ou 2/ on n'est pas rentré dans le if ligne 7
+    erreur(404);
+
 
 if (!empty($_POST)) {
 
@@ -16,10 +24,6 @@ if (!empty($_POST)) {
 
 
     ) {
-
-        require_once __DIR__ . '/../models/Article.php';
-        $article = new Article;
-
         $article->titre = $_POST['titre'];
         $article->image = $_POST['image'];
         $article->contenu = $_POST['contenu'];
@@ -31,4 +35,4 @@ if (!empty($_POST)) {
         redirection('list-articles');
     } else die('error');
 }
-include_once './views/ajout-article.php';
+include_once './views/modif-article.php';

@@ -27,9 +27,18 @@ function redirection($route)
     header('Location: index.php?route=' . $route);
     die;
 }
-function validatDate($date)
-{
-    $reg = '#/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/#';
+// function validatDate($date)
+// {
+//     $reg = '#/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/#';
 
-    return boolval(preg_match($reg, $date));
+//     return boolval(preg_match($reg, $date));
+// }
+// function validateDate($date, $format = 'Y-m-d H:i')
+// {
+//     $d = DateTime::createFromFormat($format, $date);
+//     return $d && $d->format($format) == $date;
+// }
+function erreur($code)
+{
+    die('Erreur' . $code);
 }

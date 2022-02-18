@@ -18,6 +18,8 @@
                         <p class="card-text"><small class="text-muted"><?= $article->date_de_publication ?></small></p>
 
                         <p class="card-text"><a href=""></a><small class="text-muted"><?= $article->auteur ?></small></p>
+                        <a class="text-align-right text-warning" href="index.php?route=modif-article&id=<?= $article->id ?>">Modifier l'article</a>
+
                     </div>
                 </div>
             </div>
