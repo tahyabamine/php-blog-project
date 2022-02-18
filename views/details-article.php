@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?= $article->titre ?></h5>
                     <p class="card-text"><?= $article->contenu ?></p>
-                    <a class="text-align-right" href="index.php?route=details-articlet&id=<?= $produit->id ?>">Voir plus ...</a>
+
                     <p class="card-text"><small class="text-muted"><?= $article->date_de_publication ?></small></p>
 
                     <p class="card-text"><a href=""></a><small class="text-muted"><?= $article->auteur ?></small></p>

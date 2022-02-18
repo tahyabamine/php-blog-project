@@ -16,6 +16,9 @@ switch ($route) {
     case 'details-article':
         include __DIR__ . '/controllers/details-article-controller.php';
         break;
+    case 'ajout-article':
+        include __DIR__ . '/controllers/ajout-article-controller.php';
+        break;
     default:
         die('Erreur 404');
 }

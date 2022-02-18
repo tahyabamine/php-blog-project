@@ -25,4 +25,6 @@
     <?php } ?>
 
 </div>
-<?php include __DIR__ . '/partie/footer.php'; ?>
+<?php
+
+include __DIR__ . '/partie/footer.php'; ?>

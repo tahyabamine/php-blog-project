@@ -17,4 +17,5 @@
         <nav class="nav justify-content-center">
             <a class="nav-link" href="index.php?route=accueil">Accueil</a>
             <a class="nav-link" href="index.php?route=list-articles">List des Articles</a>
+            <a class="nav-link" href="index.php?route=ajout-article">Ajouter un article</a>
         </nav>

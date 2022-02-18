@@ -21,3 +21,15 @@ function resume(object $article, $taille = 200): string
 
     return $resume;
 }
+
+function redirection($route)
+{
+    header('Location: index.php?route=' . $route);
+    die;
+}
+function validatDate($date)
+{
+    $reg = '#/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/#';
+
+    return boolval(preg_match($reg, $date));
+}
