@@ -15,7 +15,8 @@
 
     <div class="container mb-5">
         <nav class="nav justify-content-center">
-            <a class="nav-link" href="index.php?route=acceuil">Accueil</a>
+            <a class="nav-link" href="index.php?route=accueil">Accueil</a>
+            <a class="nav-link" href="index.php?route=list-articles">List des Articles</a>
 
 
         </nav>
