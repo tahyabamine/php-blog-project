@@ -11,7 +11,7 @@ if (!empty($_POST)) {
 
         && filter_var($_POST['image'], FILTER_SANITIZE_URL) !== false
 
-
+        && date_create_from_format('Y-m-d', $_POST['date'])
 
 
 

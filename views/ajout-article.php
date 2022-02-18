@@ -33,7 +33,7 @@
     <div class="form-group row">
         <label for="date" class="col-sm-12 col-form-label">Date de publication</label>
         <div class="col-sm-12">
-            <input type="datetime-local" class="form-control" name="date" id="date" placeholder="date de publication">
+            <input type="date" class="form-control" name="date" id="date" placeholder="date de publication">
         </div>
     </div>
     <div class="form-group row">
