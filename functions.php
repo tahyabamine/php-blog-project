@@ -11,3 +11,14 @@ function seConnecter()
 
     SimpleOrm::useConnection($conn, DATABASE_NAME);
 }
+
+function resume(object $article): string
+{
+    $taille = 200;
+
+    if (strlen($article->contenu) > $taille)
+        $resume = substr($article->contenu, 0, $taille) . '...';
+    else $resume = $article->contenue;
+
+    return $resume;
+}
