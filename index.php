@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'functions.php';
 seConnecter();
 
@@ -8,23 +8,36 @@ else $route = 'accueil';
 
 switch ($route) {
     case 'accueil':
-        include __DIR__ . '/controllers/accueil-controller.php';
+        include path('controller', 'accueil-controller');
         break;
     case 'list-articles':
-        include __DIR__ . '/controllers/list-articles-controller.php';
+        include path('controller', 'articles-controller');
+        liste();
         break;
     case 'details-article':
-        include __DIR__ . '/controllers/details-article-controller.php';
+        include path('controller', 'articles-controller');
+        details();
         break;
     case 'ajout-article':
-        include __DIR__ . '/controllers/ajout-article-controller.php';
+        include path('controller', 'articles-controller');
+        ajouter();
         break;
     case 'modif-article':
-        include __DIR__ . '/controllers/modif-article-controller.php';
+        include path('controller', 'articles-controller');
+        modification();
         break;
     case 'supp-article':
-        include __DIR__ . '/controllers/supp-article-controller.php';
+        include path('controller', 'articles-controller');
+        supprimer();
+        break;
+    case 'connexion':
+        include path('controller', 'authentication-controller');
+        connexion();
+        break;
+    case 'deconnexion':
+        include path('controller', 'authentication-controller');
+        deconnexion();
         break;
     default:
-        die('Erreur 404');
+        erreur(404);
 }

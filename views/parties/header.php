@@ -13,9 +13,28 @@
 
 <body>
 
+    <nav class="nav d-flex justify-content-between m-3">
+        <div class="d-flex">
+
+
+            <a class="nav-link" href="<?= url('accueil') ?>">Accueil</a>
+            <a class="nav-link" href="<?= url('list-articles') ?>">List des Articles</a>
+            <?php if ($_SESSION['role'] === "admin") { ?>
+                <a class="nav-link" href="<?= url('ajout-article') ?>">Ajouter un article</a>
+            <?php } ?>
+            <?php if (empty($_SESSION['pseudo'])) { ?>
+
+                <a class="nav-link" href="<?= url('connexion') ?>">Connexion</a>
+
+        </div>
+    <?php } else { ?>
+        <a class="nav-link" href="<?= url('deconnexion') ?>">Déconnexion</a>
+        </div>
+        <div>
+
+            <img class="nav-item " style="width:50px  " src="<?= $_SESSION['avatar'];  ?>">
+        </div>
+
+    <?php } ?>
+    </nav>
     <div class="container mb-5">
-        <nav class="nav justify-content-center">
-            <a class="nav-link" href="index.php?route=accueil">Accueil</a>
-            <a class="nav-link" href="index.php?route=list-articles">List des Articles</a>
-            <a class="nav-link" href="index.php?route=ajout-article">Ajouter un article</a>
-        </nav>

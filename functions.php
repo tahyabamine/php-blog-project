@@ -24,21 +24,27 @@ function resume(object $article, $taille = 200): string
 
 function redirection($route)
 {
-    header('Location: index.php?route=' . $route);
+    header('Location: ' . url($route));
     die;
 }
-// function validatDate($date)
-// {
-//     $reg = '#/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/#';
+function validateDate($date): bool
+{
+    $reg = "#/^[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[A-Za-z](0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/#";
 
-//     return boolval(preg_match($reg, $date));
-// }
-// function validateDate($date, $format = 'Y-m-d H:i')
-// {
-//     $d = DateTime::createFromFormat($format, $date);
-//     return $d && $d->format($format) == $date;
-// }
+    return boolval(preg_match($reg, $date));
+}
+
 function erreur($code)
 {
     die('Erreur' . $code);
+}
+function path(string $type, string $nom): string
+{
+    if ($type != 'model' && $type != 'view' && $type != 'controller') erreur(404);
+
+    return __DIR__ . '/' . $type . 's/' . $nom . '.php';
+}
+function url(string $route = 'accueil'): string
+{
+    return 'index.php?route=' . $route;
 }
