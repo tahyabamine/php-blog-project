@@ -26,6 +26,8 @@ function connexion()
                     $_SESSION['role'] = $utilisateur->role;
                     $_SESSION['id'] = $utilisateur->id;
 
+                    if (!empty($_POST['remember']))
+                        setcookie('remember', $utilisateur->id, time() + 2592000);
 
 
                     redirection('accueil');
@@ -40,6 +42,7 @@ function connexion()
 function deconnexion()
 {
     session_destroy();
+    setcookie('remember', '', 0);
     redirection('accueil');
 }
 function creatAcount()

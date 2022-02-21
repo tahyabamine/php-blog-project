@@ -24,7 +24,16 @@
             <button type="submit" class="btn btn-primary">Connexion</button>
         </div>
     </div>
-    <a class="nav-link" href="<?= url('creatacount') ?>">Cree un compte</a>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="remember" id="remember" value="true">
+            Se souvient de moi
+        </label>
+    </div>
+    <div class="form-check">
+
+        <a class="nav-link" href="<?= url('creatacount') ?>">Cree un compte</a>
+    </div>
 
 </form>
 
