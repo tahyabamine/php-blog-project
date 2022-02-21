@@ -24,6 +24,8 @@
             <button type="submit" class="btn btn-primary">Connexion</button>
         </div>
     </div>
+    <a class="nav-link" href="<?= url('creatacount') ?>">Cree un compte</a>
+
 </form>
 
 <?php include __DIR__ . '/partie/footer.php'; ?>

@@ -31,7 +31,7 @@
         <a class="nav-link" href="<?= url('deconnexion') ?>">Déconnexion</a>
         </div>
         <div>
-
+            <span class="nav-item">Welcome.<?= $_SESSION['pseudo'] ?>. !</span>
             <img class="nav-item " style="width:50px  " src="<?= $_SESSION['avatar'];  ?>">
         </div>
 

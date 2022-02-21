@@ -38,6 +38,10 @@ switch ($route) {
         include path('controller', 'authentication-controller');
         deconnexion();
         break;
+    case 'creatacount':
+        include path('controller', 'authentication-controller');
+        creatAcount();
+        break;
     default:
         erreur(404);
 }

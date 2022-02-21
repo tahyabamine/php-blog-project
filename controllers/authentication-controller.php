@@ -41,3 +41,36 @@ function deconnexion()
     session_destroy();
     redirection('accueil');
 }
+function creatAcount()
+{
+    if (!empty($_POST)) {
+
+        if (
+            !empty($_POST['pseudo'])
+            && !empty($_POST['identifiant'])
+            && !empty($_POST['password'])
+            && filter_var($_POST['image'], FILTER_SANITIZE_URL) !== false
+
+        ) {
+
+
+            $utilisateur = new Utilisateur();
+
+            $utilisateur->pseudo = $_POST['pseudo'];
+            $utilisateur->avatar = $_POST['image'];
+            $utilisateur->identifiant = $_POST['identifiant'];
+            $utilisateur->mot_de_passe = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+
+            $utilisateur->save(); // Je sauvegarde (ça envoie à la BDD)
+            $_SESSION['pseudo'] = $utilisateur->pseudo;
+            $_SESSION['identifiant'] = $utilisateur->identifiant;
+            $_SESSION['avatar'] = $utilisateur->avatar;
+            $_SESSION['role'] = $utilisateur->role;
+            $_SESSION['id'] = $utilisateur->id;
+            redirection('accueil');
+        } else die('error');
+    }
+
+    require_once path('view', 'creatacount');
+}
