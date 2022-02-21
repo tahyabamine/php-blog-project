@@ -56,6 +56,26 @@ function supprimer()
         redirection('list-articles');
     } else erreur(404);
 }
+function commentaire()
+{
+
+    if (!empty($_POST['comment'])) {
+
+
+        $commentaire = new Commentaire;
+
+        $commentaire->contenu = $_POST['comment'];
+        $commentaire->id_article = $_GET['id'];
+        $commentaire->id_utilisateur = $_SESSION['id'];
+
+
+        $commentaire->save();
+
+        redirection(('details-article' . '&id=' . $_GET['id']));
+    } else redirection('list-articles');
+}
+
+
 
 function details()
 {

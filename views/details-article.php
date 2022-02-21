@@ -15,7 +15,21 @@
     </div>
 </div>
 
-
 <?php include __DIR__ . '/commentaire.php'; ?>
+
+<form method="post" action=" <?= url('commentaire' . '&id=' . $_GET['id']) ?>">
+    <div class="form-group row">
+        <label for="comment" class="col-sm-12 col-form-label">Ajouter un commentaire</label>
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="comment" id="comment" placeholder="Ajouter un commentaire">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </div>
+</form>
+
 
 <?php include __DIR__ . '/partie/footer.php'; ?>
