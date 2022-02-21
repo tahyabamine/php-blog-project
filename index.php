@@ -42,6 +42,10 @@ switch ($route) {
         include path('controller', 'authentication-controller');
         creatAcount();
         break;
+    case 'commentaire':
+        include path('controller', 'articles-controller');
+        commentaire();
+        break;
     default:
         erreur(404);
 }

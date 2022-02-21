@@ -1,5 +1,6 @@
 <?php
 require_once path('model', 'Article');
+require_once path('model', 'Commentaire');
 
 function ajouter()
 {
@@ -54,6 +55,15 @@ function supprimer()
 
         redirection('list-articles');
     } else erreur(404);
+}
+function commentaire()
+{
+    if (empty($_GET['id'])) die('Erreur 404');
+
+    $commentaires = Commentaire::retrieveByid_article($_GET['id']);
+
+
+    require_once path('view', 'commentaire');
 }
 function details()
 {
