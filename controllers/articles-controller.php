@@ -56,15 +56,7 @@ function supprimer()
         redirection('list-articles');
     } else erreur(404);
 }
-function commentaire()
-{
-    if (empty($_GET['id'])) die('Erreur 404');
 
-    $commentaires = Commentaire::retrieveByid_article($_GET['id']);
-
-
-    require_once path('view', 'commentaire');
-}
 function details()
 {
     if (empty($_GET['id'])) die('Erreur 404');
@@ -74,8 +66,8 @@ function details()
 
     if (empty($article)) die('Erreur 404');
     // On appelle la vue
+    $commentaires = Commentaire::retrieveByid_article($_GET['id']);
     require_once  path('view', 'details-article');
-    commentaire();
 }
 function modification()
 {

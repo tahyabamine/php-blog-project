@@ -16,5 +16,6 @@
 </div>
 
 
+<?php include __DIR__ . '/commentaire.php'; ?>
 
 <?php include __DIR__ . '/partie/footer.php'; ?>
