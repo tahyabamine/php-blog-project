@@ -1,6 +1,3 @@
-<?php include __DIR__ . './parties/header.php' ?>
-
-
 <h3>List des commentaire</h3>
 <div class="list-group d-flex my-4">
 
@@ -18,6 +15,3 @@
     <?php } ?>
 
 </div>
-<?php
-
-include __DIR__ . '/partie/footer.php'; ?>

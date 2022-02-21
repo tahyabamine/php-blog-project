@@ -15,4 +15,6 @@
     </div>
 </div>
 
+
+
 <?php include __DIR__ . '/partie/footer.php'; ?>

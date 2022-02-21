@@ -73,9 +73,9 @@ function details()
     $article = Article::retrieveByPK($_GET['id']);
 
     if (empty($article)) die('Erreur 404');
-
     // On appelle la vue
     require_once  path('view', 'details-article');
+    commentaire();
 }
 function modification()
 {
