@@ -17,6 +17,7 @@ function connexion()
             $utilisateur = Utilisateur::retrieveByIdentifiant($_POST['login'], SimpleOrm::FETCH_ONE);
 
             if (!empty($utilisateur)) {
+
                 if (password_verify($_POST['password'], $utilisateur->mot_de_passe)) {
 
                     $_SESSION['pseudo'] = $utilisateur->pseudo;
@@ -49,8 +50,10 @@ function creatAcount()
             !empty($_POST['pseudo'])
             && !empty($_POST['identifiant'])
             && !empty($_POST['password'])
-            && filter_var($_POST['image'], FILTER_SANITIZE_URL) !== false
 
+            && !empty($_POST['confirmpassword'])
+            && filter_var($_POST['image'], FILTER_SANITIZE_URL) !== false
+            && ($_POST['password'] === $_POST['confirmpassword'])
         ) {
 
 
@@ -69,7 +72,9 @@ function creatAcount()
             $_SESSION['role'] = $utilisateur->role;
             $_SESSION['id'] = $utilisateur->id;
             redirection('accueil');
-        } else die('error');
+        } else {;
+            redirection('creatacount');
+        }
     }
 
     require_once path('view', 'creatacount');
