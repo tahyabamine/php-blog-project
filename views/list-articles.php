@@ -16,7 +16,6 @@
                         <h5 class="card-title"><?= $article->titre ?></h5>
                         <p class="card-text"><?= resume($article, 150) ?></p>
                         <a class="text-align-right" href="<?= url('details-article') ?>&id=<?= $article->id ?>">Voir plus ...</a>
-                        <a class="text-align-right" href="<?= url('commentaire') ?>&id=<?= $article->id ?>">Voir les commentaires </a>
 
                         <p class="card-text"><small class="text-muted"><?= $article->date_de_publication ?></small></p>
 
