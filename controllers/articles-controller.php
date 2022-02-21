@@ -58,20 +58,21 @@ function supprimer()
 }
 function commentaire()
 {
-
-    if (!empty($_POST['comment'])) {
-
-
-        $commentaire = new Commentaire;
-
-        $commentaire->contenu = $_POST['comment'];
-        $commentaire->id_article = $_GET['id'];
-        $commentaire->id_utilisateur = $_SESSION['id'];
+    if (!empty($_POST) && !empty($_SESSION)) {
+        if (!empty($_POST['comment'])) {
 
 
-        $commentaire->save();
+            $commentaire = new Commentaire;
 
-        redirection(('details-article' . '&id=' . $_GET['id']));
+            $commentaire->contenu = $_POST['comment'];
+            $commentaire->id_article = $_GET['id'];
+            $commentaire->id_utilisateur = $_SESSION['id'];
+
+
+            $commentaire->save();
+
+            redirection(('details-article' . '&id=' . $_GET['id']));
+        } else redirection('list-articles');
     } else redirection('list-articles');
 }
 
